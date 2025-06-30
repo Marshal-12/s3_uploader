@@ -17,7 +17,7 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 @Service
-@Slf4j
+//@Slf4j
 public class StorageService {
 
     @Value("${application.bucket.name}")
@@ -27,7 +27,7 @@ public class StorageService {
     private AmazonS3 s3Client;
 
     public String uploadFile(MultipartFile file) {
-        log.info("uploading file");
+       // log.info("uploading file");
         File fileObj = convertMultiPartFileToFile(file);
          String email="SUNNY";
          String jobID="12";
@@ -62,7 +62,8 @@ public class StorageService {
         try (FileOutputStream fos = new FileOutputStream(convertedFile)) {
             fos.write(file.getBytes());
         } catch (IOException e) {
-            log.error("Error converting multipartFile to file", e);
+         //   log.error("Error converting multipartFile to file", e);
+            System.out.println("Error converting multipartFile to file");
         }
         return convertedFile;
     }
