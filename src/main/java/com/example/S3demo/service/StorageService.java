@@ -27,6 +27,7 @@ public class StorageService {
     private AmazonS3 s3Client;
 
     public String uploadFile(MultipartFile file) {
+        log.info("uploading file");
         File fileObj = convertMultiPartFileToFile(file);
          String email="SUNNY";
          String jobID="12";
