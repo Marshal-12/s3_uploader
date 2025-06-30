@@ -17,7 +17,7 @@ public class StorageController {
 
     @PostMapping("/")
     public String helloWorld(){
-        return "hello";
+        return "hello1";
     }
 
     @PostMapping("/upload")
