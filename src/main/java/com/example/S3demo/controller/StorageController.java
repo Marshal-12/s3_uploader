@@ -15,6 +15,11 @@ public class StorageController {
     @Autowired
     private StorageService service;
 
+    @PostMapping("/")
+    public String helloWorld(){
+        return "hello";
+    }
+
     @PostMapping("/upload")
     public ResponseEntity<String> uploadFile(@RequestParam(value = "file") MultipartFile file) {
         return new ResponseEntity<>(service.uploadFile(file), HttpStatus.OK);
